@@ -1,0 +1,103 @@
+/*
+
+Global styles
+
+*/
+
+* {
+  background-color: black;
+  /*background-color: #231f20;*/
+  color: white;
+  font-family: 'EB Garamond', serif;
+}
+
+body {
+  margin: 0 auto;
+  padding: 3em 1em;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+}
+
+#page-1, #page-3{
+  margin: 0 auto;
+  max-width: 60em;
+}
+
+@media screen and (max-width:600px) {
+  .page{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.page > * {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.left {
+  padding-right: 11em;
+}
+
+/*
+
+IMG styles
+
+*/
+.img-wrapper , .video-wrapper{
+  width: 100%;
+}
+
+.img-wrapper img {
+  width: 100%;
+}
+
+/*
+
+Typography
+
+*/
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 400;
+  margin: 0;
+}
+
+p{
+  font-style: italic;
+  font-size: 1.1em;
+}
+#email{
+  text-align: center;
+  font-size: 1em;
+}
+a {
+  text-decoration: none;
+}
+
+.main-header {
+  font-size: 2.5em;
+}
+
+footer {
+  text-align: center;
+  font-size: .7em;
+}
+
+@media screen and (max-width: 700px) {
+  .main-header {
+    font-size: 2em;
+  }
+  .secondary-header {
+    font-size: 1.3em;
+  }
+}
+
