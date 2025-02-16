@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="static/styles.css">
-  <title>Magnus Lindström</title>
+  <title>skam och värdighet</title>
 </head>
 <body>
   <section id="page-1" class="page">
@@ -41,15 +41,17 @@ när vi når värdighet. Frågan är hur vi förhåller oss.</p>
   <!-- Page 2 -->
   <section id="page-2" class="page">
     <div class="video-wrapper">
-      <video poster="/static/poster.png" preload="metadata">
+      <video class="video" poster="/static/poster.png" preload="metadata">
         <source src="/static/magnus lindström - skam och värdighet - 720HD.mp4"/>
         <source src="/static/magnus lindström - skam och värdighet.mp4"/>
         <!-- Ska programmera in timestamps för navigering till olika låtar -->
       </video>
-      <div class="progress"></div>
       <div class="video-controls">
-        <button type="button">►</button>
-        <input type="slider">
+        <div class="progress">
+          <div class="progress__filled"></div>
+         </div>
+         <button class="play-button toggle" title="Toggle Play">►</button>
+        <input name="volume" class="volume-slider" type="range" min="0" max="1" step="0.05" value="0.8">
       </div>
     </div>
   </section>
