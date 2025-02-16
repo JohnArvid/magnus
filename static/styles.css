@@ -113,8 +113,6 @@ footer {
 
 /* Videospelare */
 .video-wrapper {
-  border: 5px solid rgba(0,0,0,0.2);
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
   position: relative;
   font-size: 0;
   overflow: hidden;
@@ -135,7 +133,7 @@ footer {
   width: 100%;
 }
 
-.play-button {
+.play-button, .fullscreen-button {
   background: none;
   border: 0;
   line-height: 1;
@@ -147,8 +145,8 @@ footer {
   max-width: 50px;
 }
 
-.play-button:focus {
-  border-color: #ffc600;
+.play-button:focus, .fullscreen-button:focus{
+  border-color: #ffffff;
 }
 
 .volume-slider {
@@ -192,7 +190,7 @@ footer {
 
 .progress__filled {
   width: 50%;
-  background: #ffc600;
+  background: #ffffff;
   flex: 0;
   flex-basis: 50%;
 }
