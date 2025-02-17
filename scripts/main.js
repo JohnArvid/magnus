@@ -41,6 +41,11 @@ function togglePlay() {
   video[method]();
 }
 
+function handleSpacebar(e) {
+  e.preventDefault();
+  togglePlay();
+}
+
 function updateButton() {
   const icon = this.paused ? '►' : '❚ ❚';
   console.log(icon);
@@ -82,13 +87,13 @@ progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
 progress.addEventListener('mousedown', () => (mousedown = true));
 progress.addEventListener('mouseup', () => (mousedown = false));
 
-/**
- * Lägg till lyssnare på spacebar och koppla till togglePlay
- */
-document.addEventListener('keyup', (e) => e.code === 'Space' && togglePlay);
+document.addEventListener(
+  'keydown',
+  (e) => e.code === 'Space' && handleSpacebar(e)
+);
 
 /**
- * Timestamps på videon
+ * Timestamps på videon - UNDER ARBETE
  */
 const timeStamps = [
   { time: '00:00:00', title: 'sveket' },
@@ -105,3 +110,20 @@ const timeStamps = [
   { time: '01:04:32', title: 'målet' },
   { time: '01:13:11', title: 'läget' },
 ];
+
+function createTimeStampNode(timeStamp) {
+  let node = document.createElement('span');
+  node.textContent = timeStamp.title;
+  node.style.offsetWidth =
+    (convertTimeStampToSeconds(timeStamp.time) / progress.offsetWidth) *
+    video.duration;
+
+  console.log('timestamp', convertTimeStampToSeconds(timeStamp.time));
+  console.log('videolängd', video.duration);
+  console.log('progress', progress.offsetWidth);
+}
+
+function convertTimeStampToSeconds(timeStamp) {
+  let a = timeStamp.split(':');
+  return +a[0] * 60 * 60 + +a[1] * 60 + +a[2];
+}
