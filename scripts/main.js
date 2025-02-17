@@ -85,10 +85,23 @@ progress.addEventListener('mouseup', () => (mousedown = false));
 /**
  * Lägg till lyssnare på spacebar och koppla till togglePlay
  */
-document.addEventListener('keyup', (e) => e.code === "Space" && togglePlay )
-
+document.addEventListener('keyup', (e) => e.code === 'Space' && togglePlay);
 
 /**
  * Timestamps på videon
  */
-const timeStamps = [];
+const timeStamps = [
+  { time: '00:00:00', title: 'sveket' },
+  { time: '00:06:04', title: 'sviterna' },
+  { time: '00:09:41', title: 'ovissheten' },
+  { time: '00:14:33', title: 'tiden' },
+  { time: '00:20:30', title: 'rösten' },
+  { time: '00:25:30', title: 'hemligheten' },
+  { time: '00:37:08', title: 'öppningen' },
+  { time: '00:41:17', title: 'tankarna' },
+  { time: '00:51:10', title: 'beslutet' },
+  { time: '00:54:54', title: 'saknaden' },
+  { time: '00:59:43', title: 'frågorna' },
+  { time: '01:04:32', title: 'målet' },
+  { time: '01:13:11', title: 'läget' },
+];
