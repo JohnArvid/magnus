@@ -192,7 +192,7 @@ footer {
   width: 50%;
   background: #ffffff;
   flex: 0;
-  flex-basis: 50%;
+  flex-basis: 0%;
 }
 
 /* unholy css to style input type="range" */
