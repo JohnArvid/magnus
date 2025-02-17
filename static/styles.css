@@ -23,7 +23,7 @@ body {
 
 #page-1,
 #page-3 {
-  margin: 0 13em;
+  margin: 0 15%;
   /* max-width: 60em; */
 }
 #page-2 {
@@ -36,6 +36,13 @@ body {
     flex-direction: column;
     align-items: center;
   }
+  .left {
+    margin-bottom: 2em;
+  }
+  #page-3 .img-wrapper {
+    display: none;
+  }
+
 }
 
 .page > * {
@@ -46,7 +53,7 @@ body {
 }
 
 .left {
-  padding-right: 11em;
+  padding-right: 19%;
 }
 
 /*
