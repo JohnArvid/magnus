@@ -41,15 +41,14 @@ function togglePlay() {
   video[method]();
 }
 
+function updateButton() {
+  const icon = this.paused ? '►' : '❚ ❚';
+  toggle.textContent = icon;
+}
+
 function handleSpacebar(e) {
   e.preventDefault();
   togglePlay();
-}
-
-function updateButton() {
-  const icon = this.paused ? '►' : '❚ ❚';
-  console.log(icon);
-  toggle.textContent = icon;
 }
 
 function handleRangeUpdate() {
