@@ -125,12 +125,9 @@ function createTimeStampNode(timeStamp) {
   progress.appendChild(node);
   node.addEventListener('click', (e) => {
     e.stopPropagation();
-    console.log(timeStamp.time)
     video.currentTime = convertTimeStampToSeconds(timeStamp.time)
   })
-  console.log('timestamp', convertTimeStampToSeconds(timeStamp.time));
-  console.log('videolängd', video.duration);
-  console.log('progress', progress.offsetWidth);
+
 }
 
 function convertTimeStampToSeconds(timeStamp) {
