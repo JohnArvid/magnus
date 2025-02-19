@@ -6,7 +6,6 @@ Global styles
 
 * {
   background-color: black;
-  /*background-color: #231f20;*/
   color: white;
   font-family: 'EB Garamond', serif;
 }
@@ -17,33 +16,38 @@ body {
 }
 
 .page {
-  min-height: 100vh;
+  /*min-height: 100vh;*/
   display: flex;
 }
 
 #page-1,
 #page-3 {
-  margin: 0 15%;
-  /* max-width: 60em; */
+  margin: 3em 15%;
 }
+
 #page-2 {
   align-items: center;
   justify-content: center;
+  margin-bottom: 3em;
+}
+
+#page-3 {
+  padding-top: 6em;
 }
 
 .page > * {
   display: flex;
   flex: 1;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
 }
 
 .left {
-  padding-right: 19%;
+  padding-right: 10%;
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .page {
     flex-direction: column;
     align-items: center;
@@ -89,7 +93,7 @@ p {
   margin-block-end: 0.3em;
   margin-block-start: 0.1em;
   font-style: italic;
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 #swish {
   margin-block-start: 0.6em;
