@@ -42,7 +42,6 @@ body {
   #page-3 .img-wrapper {
     display: none;
   }
-
 }
 
 .page > * {
@@ -204,6 +203,35 @@ footer {
   background: #ffffff;
   flex: 0;
   flex-basis: 0%;
+}
+.progress .marker {
+  position: absolute;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.marker {
+  position: absolute;
+  height: 8px;
+  width: 4px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.marker[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 20px; /* Adjust for tooltip positioning */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1000;
 }
 
 /* unholy css to style input type="range" */

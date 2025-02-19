@@ -94,6 +94,10 @@ document.addEventListener(
 /**
  * Timestamps på videon - UNDER ARBETE
  */
+video.addEventListener('loadedmetadata', () =>
+  timeStamps.forEach((timeStamp) => createTimeStampNode(timeStamp))
+);
+
 const timeStamps = [
   { time: '00:00:00', title: 'sveket' },
   { time: '00:06:04', title: 'sviterna' },
@@ -111,12 +115,19 @@ const timeStamps = [
 ];
 
 function createTimeStampNode(timeStamp) {
-  let node = document.createElement('span');
-  node.textContent = timeStamp.title;
-  node.style.offsetWidth =
-    (convertTimeStampToSeconds(timeStamp.time) / progress.offsetWidth) *
-    video.duration;
+  let node = document.createElement('div');
+  node.setAttribute('title', timeStamp.title);
+  node.classList.add('marker');
+  node.style.left = `${
+    (convertTimeStampToSeconds(timeStamp.time) / video.duration) * 100
+  }%`;
 
+  progress.appendChild(node);
+  node.addEventListener('click', (e) => {
+    e.stopPropagation();
+    console.log(timeStamp.time)
+    video.currentTime = convertTimeStampToSeconds(timeStamp.time)
+  })
   console.log('timestamp', convertTimeStampToSeconds(timeStamp.time));
   console.log('videolängd', video.duration);
   console.log('progress', progress.offsetWidth);
