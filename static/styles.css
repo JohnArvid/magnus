@@ -38,7 +38,7 @@ body {
 .page > * {
   display: flex;
   flex: 1;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -74,6 +74,12 @@ IMG styles
 .img-wrapper img {
   width: 100%;
 }
+/*
+.img-wrapper{
+  justify-content: center;
+}
+  */
+
 
 /*
 
@@ -101,14 +107,33 @@ p {
 
 #email {
   text-align: center;
-  font-size: 1em;
+  font-size: 1.5em;
 }
 a {
   text-decoration: none;
 }
 
 .main-header {
-  font-size: 2.5em;
+  font-size: 2.8em;
+}
+
+@media only screen and (max-width: 1080px){
+  .main-header {
+    font-size: 2.5em;
+  }
+}
+
+@media only screen and (max-width: 966px) and (min-width:900px){
+  .main-header {
+    font-size: 2.2em;
+  }
+  .secondary-header{
+    font-size: 1.2em;
+  }
+}
+
+.secondary-header{
+  margin-bottom: 0.5em;
 }
 
 .img-wrapper .main-header {
@@ -120,6 +145,7 @@ footer {
   font-size: 0.7em;
 }
 
+/*
 @media screen and (max-width: 700px) {
   .main-header {
     font-size: 2em;
@@ -128,7 +154,7 @@ footer {
     font-size: 1.3em;
   }
 }
-
+*/
 /* Videospelare */
 .video-player {
   position: relative;
