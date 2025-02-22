@@ -26,7 +26,7 @@ const ranges = player.querySelectorAll('.volume-slider');
  */
 function toggleFullscreen() {
   if (!document.fullscreenElement) {
-    video.requestFullscreen().catch((err) => {
+    player.requestFullscreen().catch((err) => {
       alert(
         `Error attempting to enable fullscreen mode: ${err.message} (${err.name})`
       );
