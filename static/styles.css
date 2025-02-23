@@ -152,16 +152,7 @@ footer {
   font-size: 0.7em;
 }
 
-/*
-@media screen and (max-width: 700px) {
-  .main-header {
-    font-size: 2em;
-  }
-  .secondary-header {
-    font-size: 1.3em;
-  }
-}
-*/
+
 /* Videospelare */
 .video-player {
   position: relative;
@@ -184,8 +175,7 @@ footer {
   width: 100%;
 }
 
-.play-button,
-.fullscreen-button {
+button {
   background: none;
   border: 0;
   line-height: 1;
@@ -197,8 +187,7 @@ footer {
   max-width: 50px;
 }
 
-.play-button:focus,
-.fullscreen-button:focus {
+button:focus {
   border-color: #ffffff;
 }
 
@@ -231,7 +220,7 @@ footer {
 }
 
 .progress {
-  flex: 9;
+  flex: 10;
   position: relative;
   display: flex;
 /*  flex-basis: 100%;*/
@@ -275,6 +264,7 @@ footer {
   white-space: nowrap;
   pointer-events: none;
   z-index: 1000;
+  font-size: large;
 }
 
 /* unholy css to style input type="range" */

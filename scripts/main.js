@@ -16,6 +16,8 @@ const player = document.querySelector('.video-player');
 const video = player.querySelector('video');
 const playButton = player.querySelector('.play-button');
 const fullscreenButton = player.querySelector('.fullscreen-button');
+const next = player.querySelector('.next')
+const previous = player.querySelector('.prev')
 const progress = player.querySelector('.progress');
 const progressBar = player.querySelector('.progress__filled');
 const toggle = player.querySelector('.toggle');
@@ -91,12 +93,21 @@ document.addEventListener(
   (e) => e.code === 'Space' && handleSpacebar(e)
 );
 
+
+
+
 /**
  * Timestamps på videon - UNDER ARBETE
  */
+
 video.addEventListener('loadedmetadata', () =>
   timeStamps.forEach((timeStamp) => createTimeStampNode(timeStamp))
 );
+previous.addEventListener('click', goToPreviousTimeStamp);
+next.addEventListener('click', goToNextTimeStamp);
+
+
+
 
 const timeStamps = [
   { time: '00:00:00', title: 'sveket' },
@@ -125,12 +136,25 @@ function createTimeStampNode(timeStamp) {
   progress.appendChild(node);
   node.addEventListener('click', (e) => {
     e.stopPropagation();
-    video.currentTime = convertTimeStampToSeconds(timeStamp.time)
-  })
-
+    video.currentTime = convertTimeStampToSeconds(timeStamp.time);
+  });
 }
 
 function convertTimeStampToSeconds(timeStamp) {
   let a = timeStamp.split(':');
   return +a[0] * 60 * 60 + +a[1] * 60 + +a[2];
 }
+
+let times = timeStamps.map((timeStamp) =>
+  convertTimeStampToSeconds(timeStamp.time)
+);
+
+function goToNextTimeStamp() {
+  video.currentTime = times.find((time) => time - video.currentTime > 0);
+}
+
+function goToPreviousTimeStamp() {
+  video.currentTime = times[times.findLastIndex((time) => time - (video.currentTime - 2) < 0)];
+}
+
+
