@@ -218,6 +218,17 @@ button:focus {
   height: 10px;
 }
 
+@media (hover: none) {
+  .video-player .video-controls {
+    transform: translateY(0);
+  }
+  
+  .video-player .progress {
+    height: 10px;
+  }
+} 
+
+
 .video-controls > * {
   flex: 1;
 }
