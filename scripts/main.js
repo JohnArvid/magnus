@@ -118,7 +118,8 @@ document.addEventListener(
  * Hur ska jag hantera olika filformat? uppdatera src på flera element?
  * 
  * spara id i data-song-id på video-elementet så är det lätt att 
- * lista ut vilken som är nästa/föregående.
+ * lista ut vilken som är nästa/föregående. Vad är det för event som händer när en 
+ * video är slut? Jag behöver lyssna efter det och ladda nästa låt.
  */
 
 video.addEventListener('loadedmetadata', () =>
