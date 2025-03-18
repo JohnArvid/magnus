@@ -66,6 +66,7 @@ function scrub(e) {
   const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
   video.currentTime = scrubTime;
 }
+
 /**
  * Eventlyssnare
  */
@@ -97,7 +98,27 @@ document.addEventListener(
 
 
 /**
- * Timestamps på videon - UNDER ARBETE
+ * Det här kan kanske helt tas bort och ersättas med nya funktioner 
+ * för "nästa" och "föregående". 
+ * 
+ * 
+ * Låtarna behöver sparas i en array med objekt typ:
+ * 
+ * let songs = [
+ *   { id: 1,
+ *     src: "url.to.song"
+ *     title: "sveket"
+ *   },
+ *   { id: 2,
+ *     src: "url.to.song"
+ *     title: "sviterna"
+ *   },
+ * ]
+ * 
+ * Hur ska jag hantera olika filformat? uppdatera src på flera element?
+ * 
+ * spara id i data-song-id på video-elementet så är det lätt att 
+ * lista ut vilken som är nästa/föregående.
  */
 
 video.addEventListener('loadedmetadata', () =>
