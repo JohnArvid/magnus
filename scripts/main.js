@@ -98,9 +98,6 @@ document.addEventListener(
 
 
 /**
- * Det här kan kanske helt tas bort och ersättas med nya funktioner 
- * för "nästa" och "föregående". 
- * 
  * 
  * Låtarna behöver sparas i en array med objekt typ:
  * 
@@ -119,7 +116,13 @@ document.addEventListener(
  * 
  * spara id i data-song-id på video-elementet så är det lätt att 
  * lista ut vilken som är nästa/föregående. Vad är det för event som händer när en 
- * video är slut? Jag behöver lyssna efter det och ladda nästa låt.
+ * video är slut? Jag behöver lyssna efter det och ladda nästa låt. 
+ * och när den är laddad spela upp den.
+ * 
+ * 
+ * 
+ * Nedan här kan kanske helt tas bort och ersättas med nya funktioner 
+ * för "nästa" och "föregående"
  */
 
 video.addEventListener('loadedmetadata', () =>

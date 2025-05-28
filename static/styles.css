@@ -45,8 +45,17 @@ body {
 .left {
   padding-right: 10%;
 }
+.yt-player {
+  display: none;
+}
 
 @media screen and (max-width: 900px) {
+  .video-player {
+    display: none;
+  }
+  .yt-player {
+    display: block;
+  }
   .page {
     flex-direction: column;
     align-items: center;
@@ -67,6 +76,11 @@ body {
   }
 }
 
+@media screen and (max-width: 550px) {
+  iframe {
+    max-width: 100%;
+  }
+}
 /*
 
 IMG styles
