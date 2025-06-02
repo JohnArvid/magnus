@@ -49,7 +49,14 @@ body {
   display: none;
 }
 
+.mobile-only {
+  display: none;
+}
+
 @media screen and (max-width: 900px) {
+  .mobile-only {
+    display: block;
+  }
   .video-player {
     display: none;
   }
@@ -352,4 +359,13 @@ input[type='range']::-moz-range-thumb {
   border-radius: 50px;
   background: #ffffff;
   cursor: pointer;
+}
+
+
+/*
+IFRAME STYLE
+*/
+
+iframe html body .ytp-title-channel, .ytp-title-channel-logo {
+  display: none;
 }
